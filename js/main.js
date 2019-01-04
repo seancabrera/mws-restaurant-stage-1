@@ -8,7 +8,7 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  initMap(); // added 
+  initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -160,7 +160,11 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  const largeImageUrl = DBHelper.imageUrlForRestaurant(restaurant);
+  const smallImageUrl = getSmallImageUrl(largeImageUrl);
+  image.src = largeImageUrl;
+  image.srcset = largeImageUrl + ' 800w, ' + smallImageUrl + ' 400w';
+  image.sizes = '(max-width: 800px) calc(100vw - 170px), 50vw';
   li.append(image);
 
   const name = document.createElement('h1');
@@ -183,6 +187,11 @@ createRestaurantHTML = (restaurant) => {
   return li
 }
 
+function getSmallImageUrl(largeImageUrl) {
+  const largeImageUrlParts = largeImageUrl.split('.');
+  return  largeImageUrlParts[0] + '_small.' + largeImageUrlParts[1];
+}
+
 /**
  * Add markers for current restaurants to the map.
  */
@@ -197,7 +206,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
+}
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
