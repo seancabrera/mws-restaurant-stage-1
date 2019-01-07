@@ -3,7 +3,7 @@
 
 ## Project Overview
 
-For the **Restaurant Reviews** project, the goal was to convert a static webpage to a mobile-ready web application. In **Stage One**, the requirements were to take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. Also a service worker was added to begin the process of creating a seamless offline experience for your users.
+For the **Restaurant Reviews** project, the goal was to convert a static webpage to a mobile-ready web application. In **Stage One**, the requirements were to take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. Also a service worker was added to begin the process of creating a seamless offline experience.
 
 Udacity provided starter code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. My job was to update the code to resolve these issues while still maintaining the included functionality.
 
