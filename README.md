@@ -20,7 +20,7 @@ For Python 2, use:
 For Python3, use: 
 `python3 -m http.server 8000`
 
-If running Python3 on Sindows, use: 
+If running Python3 on Windows, use: 
 `python -m http.server 8000`
 
 ## Leaflet.js and Mapbox:
